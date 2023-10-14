@@ -15,3 +15,6 @@ Interactive calendar to display events throughout the month for Detty December
 ## Mock Website
 ![mocksite](detty_december_mock.png)
 
+
+## SQL schema
+![mocksite](Detty_dec_schema.png)
