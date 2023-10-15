@@ -1,0 +1,101 @@
+[
+{
+  "model": "calendar_app.user",
+  "pk": 1,
+  "fields": {
+    "first_name": "Tomiwa",
+    "last_name": "Akinbayo",
+    "user_email": "tomi@gmail.com"
+  }
+},
+{
+  "model": "calendar_app.user",
+  "pk": 2,
+  "fields": {
+    "first_name": "Kobe",
+    "last_name": "Bryant",
+    "user_email": "mamba@gmail.com"
+  }
+},
+{
+  "model": "calendar_app.user",
+  "pk": 3,
+  "fields": {
+    "first_name": "Evelina",
+    "last_name": "Cozens",
+    "user_email": "ecozens0@bloomberg.com"
+  }
+},
+{
+  "model": "calendar_app.user",
+  "pk": 4,
+  "fields": {
+    "first_name": "Eddie",
+    "last_name": "Smitheman",
+    "user_email": "esmitheman1@tumblr.com"
+  }
+},
+{
+  "model": "calendar_app.user",
+  "pk": 5,
+  "fields": {
+    "first_name": "Talbert",
+    "last_name": "Foale",
+    "user_email": "tfoale2@ox.ac.uk"
+  }
+},
+{
+  "model": "calendar_app.user",
+  "pk": 6,
+  "fields": {
+    "first_name": "Dionisio",
+    "last_name": "McAuslan",
+    "user_email": "dmcauslan3@dell.com"
+  }
+},
+{
+  "model": "calendar_app.user",
+  "pk": 7,
+  "fields": {
+    "first_name": "Tova",
+    "last_name": "Noor",
+    "user_email": "tnoor4@alexa.com"
+  }
+},
+{
+  "model": "calendar_app.user",
+  "pk": 8,
+  "fields": {
+    "first_name": "Thorstein",
+    "last_name": "Eitter",
+    "user_email": "teitter5@nymag.com"
+  }
+},
+{
+  "model": "calendar_app.user",
+  "pk": 9,
+  "fields": {
+    "first_name": "Edgardo",
+    "last_name": "Dorran",
+    "user_email": "edorran6@japanpost.jp"
+  }
+},
+{
+  "model": "calendar_app.user",
+  "pk": 10,
+  "fields": {
+    "first_name": "Addi",
+    "last_name": "Lammiman",
+    "user_email": "alammiman7@godaddy.com"
+  }
+},
+{
+  "model": "calendar_app.user",
+  "pk": 11,
+  "fields": {
+    "first_name": "Hakeem",
+    "last_name": "Olajuwon",
+    "user_email": "dream@gmail.com"
+  }
+}
+]
