@@ -3,8 +3,11 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 import requests
 import pprint
+from dotenv import load_dotenv
+import os
 # Create your views here.
 
+load_dotenv()
 pp = pprint.PrettyPrinter(indent=2, depth=2)
 
 class Event_Image(APIView):
@@ -12,7 +15,7 @@ class Event_Image(APIView):
     def get(self, request):
       movie_id = 2
       url = f"https://api.themoviedb.org/3/movie/{movie_id}/images"
-      access_token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMjBiZmIxNTgxMmYyYTUxNGZlYmY5OWU2Y2U4ZTVlOSIsInN1YiI6IjY1MmRjOTRmMGNiMzM1MTZmNzQ4OTkzNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.71VT_QarprP92KAbU8uQUY7OKseeiuB1mC7WceEsA04'
+      access_token = os.getenv('API_KEY')
 
       headers = {
           "accept": "application/json",
