@@ -4,6 +4,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.core.serializers import serialize
 import json 
+from rest_framework.status import HTTP_204_NO_CONTENT, HTTP_404_NOT_FOUND
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 class All_Events(APIView):
@@ -85,8 +87,14 @@ class Single_Event(APIView):
     return Response(serialized_event)
   
   def delete(self, request, event_date):
-    event = Event.objects.get(date = event_date)
-    serialized_event = json.loads(serialize("json", [event]))[0]
+    try:
+      event = Event.objects.get(date = event_date)
+      serialized_event = json.loads(serialize("json", [event]))[0]
+      print(serialized_event)
+      event.delete()
+      return Response(status=HTTP_204_NO_CONTENT)
+    except ObjectDoesNotExist:
+      return Response({"error": "Event not found"}, status=HTTP_404_NOT_FOUND)
 
 
 

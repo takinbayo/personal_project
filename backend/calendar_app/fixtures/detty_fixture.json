@@ -4,9 +4,9 @@
   "pk": 1,
   "fields": {
     "owner": 11,
-    "event_name": "Sunday at Ilashe",
+    "event_name": "Sundays at Ilashe",
     "event_des": "Private villa party, all guests are welcome",
-    "location": "Victoria Island, Lagos",
+    "location": "Banana Island",
     "date": "2023-12-17",
     "time": "22:50:00"
   }
@@ -42,7 +42,7 @@
     "owner": 3,
     "event_name": "Sipes-Kunde",
     "event_des": "Team-oriented next generation concept",
-    "location": "Al Qurḩ",  
+    "location": "Al Qurḩ",
     "date": "2023-12-20",
     "time": "22:50:00"
   }
@@ -117,6 +117,18 @@
     "location": "Sokarame",
     "date": "2023-12-26",
     "time": "22:50:00"
+  }
+},
+{
+  "model": "calendar_app.event",
+  "pk": 11,
+  "fields": {
+    "owner": 1,
+    "event_name": "Beach Party",
+    "event_des": "Bar Beach Bars",
+    "location": "Bar Beach",
+    "date": "2023-12-27",
+    "time": "22:55:00"
   }
 }
 ]
