@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('detty/', include('calendar_app.urls')),
     path('detty/images', include('api_app.urls')),
+    path('detty/users/', include('user_app.urls')),
 ]

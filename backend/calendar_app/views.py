@@ -18,7 +18,7 @@ class All_Events(APIView):
     for event in range(len(readable_event)):
       current_event = readable_event[event]
       event_poster = current_event["fields"]["owner"]
-      print(event_poster)
+      # print(event_poster)
       list_of_users = []
       event_poster = User.objects.get(id=event_poster)
       readable_user = json.loads(serialize("json", [event_poster]))
