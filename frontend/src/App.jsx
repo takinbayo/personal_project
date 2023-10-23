@@ -30,15 +30,31 @@ function App() {
     }
     
   }
+
+  useEffect(() =>{
+    whoAmI()
+  }, [])
+
+  const logOut = async() => {
+    let response = await api.post("logout/")
+    if (response.status === 204){
+      localStorage.removeItem("token")
+      setUser(null)
+      navigate("login")
+    }
+  }
+
+
   return (
     <div className="text-center min-h-screen flex flex-col">
       <h1 className="text-4xl font-bold font-serif">Detty December</h1>
       <nav>
         <ul>
           <Link to ="/Home" className="mr-4">Home</Link>
-          <button onClick={()=>setUser(null)}>Log Out</button>
+          <button onClick={logOut}>Log Out</button>
           <Link to ="/About"className="mx-4">About</Link>
           <Link to ="/Event/2023-12-18"className="ml-4">Events</Link>
+          <Link to ="/Login" className="mr-4">Log In</Link>
         </ul>
       </nav>
       <userContext.Provider value={{user, setUser}}>

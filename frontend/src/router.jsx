@@ -5,6 +5,7 @@ import About from "./components/About";
 import Error404Page from "./components/Error404Page";
 import EventPage from "./components/EventPage";
 import RegisterPage from "./components/RegisterPage";
+import LoginPage from "./components/LoginPage";
 
 
 const router = createBrowserRouter([
