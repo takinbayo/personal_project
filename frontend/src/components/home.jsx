@@ -3,8 +3,10 @@ import '../App.css'
 import { generateDate, months } from '../util/calendar';
 import cn from '../util/cn';
 import dayjs from 'dayjs'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {GrFormNext, GrFormPrevious} from "react-icons/gr";
+import { event } from "../api/authApi";
+// import { userContext } from '../App';
 
 export default function Home() {
   // console.log(generateDate());
@@ -12,6 +14,27 @@ export default function Home() {
   const currentDate = dayjs();
   const [today, setToday] = useState(currentDate);
   const [selectDate, setSelectDate] = useState(currentDate)
+  const [eventDate, setEventDate] = useState(null)
+
+  const screenData = async(selectDate) => {
+    // e.preventDefault();
+    const formatDate = selectDate.format('YYYY-MM-DD');
+    const response = await event.get(`${formatDate}`)
+    // console.log(response.data)
+    if (response.status === 200) {
+      const data = await response.data;
+      setEventDate(data)
+    } else{
+      setEventDate(null)
+    }
+  };
+
+  useEffect(() => {
+    screenData(selectDate)
+  }, [selectDate])
+    
+    
+  
 
   
   return (
@@ -52,6 +75,7 @@ export default function Home() {
                 )}
                 onClick={() => {
                   setSelectDate(date);
+                  screenData(date)
                 }}
                 
                 >{date.date()}</h1>
@@ -63,7 +87,20 @@ export default function Home() {
       </div>
       <div className='h-96 w-96 px-5'>
         <h1 className='font-semibold'>Schedule for {selectDate.toDate().toDateString()}</h1>
-        <p>No meetings for today.</p>
+        {eventDate ? (
+          // console.log(eventDate.fields.event_name)
+          <div>
+            <p>Event Name: {eventDate.fields.event_name}</p>
+            <p>Event Description: {eventDate.fields.event_des}</p>
+            <p>Location: {eventDate.fields.location}</p>
+            {/* <p>Date: {eventDate.flields.date}</p> */}
+            <p>Owner: {eventDate.fields.owner}</p>
+            <p>Time: {eventDate.fields.time}</p>
+          </div>
+        ) : (
+          <p>No meetings for today.</p>
+        )}
+       
       </div>
     </div>
   );

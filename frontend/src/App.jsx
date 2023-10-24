@@ -22,11 +22,11 @@ function App() {
       api.defaults.headers.common["Authorization"] = `Token ${token}`
       let response = await api.get("info/")
       setUser(response.data)
-      navigate("home")
+      navigate("/home")
     }
     else{
       setUser(null)
-      navigate("login")
+      navigate("/login")
     }
     
   }
@@ -40,27 +40,37 @@ function App() {
     if (response.status === 204){
       localStorage.removeItem("token")
       setUser(null)
-      navigate("login")
+      delete api.defaults.headers.common["Authorization"];
+      navigate("/login")
     }
   }
 
 
   return (
     <div className="text-center min-h-screen flex flex-col">
-      <h1 className="text-4xl font-bold font-serif">Detty December</h1>
-      <nav>
-        <ul>
-          <Link to ="/Home" className="mr-4">Home</Link>
-          <button onClick={logOut}>Log Out</button>
-          <Link to ="/About"className="mx-4">About</Link>
-          <Link to ="/Event/2023-12-18"className="ml-4">Events</Link>
-          <Link to ="/Login" className="mr-4">Log In</Link>
-        </ul>
-      </nav>
-      <userContext.Provider value={{user, setUser}}>
-        <Outlet />
-      </userContext.Provider>
-      
+      <header>
+        <h1 className="text-4xl font-bold font-serif">Detty December</h1>
+        <nav>
+          {
+            user 
+            ?
+            <>
+            <Link to ="/home" className="mr-4">Home</Link>
+            <button onClick={logOut}>Log Out</button>
+            <Link to ="/about"className="mx-4">About</Link>
+            <Link to ="/event/2023-12-18"className="ml-4">Events</Link>
+            </>
+            :
+            <>
+            <Link to ="/login" className="mr-4">Log In</Link>
+            <Link to ="/" className="mx-4">Sign Up</Link>
+            </>
+          }   
+        </nav>
+        </header>
+        <userContext.Provider value={{user, setUser}}>
+          <Outlet />
+        </userContext.Provider>
     </div>
   );
 

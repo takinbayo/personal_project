@@ -27,7 +27,8 @@ const RegisterPage = () => {
     setUser(user)
     localStorage.setItem("token", token)
     api.defaults.headers.common["Authorization"] = `Token ${token}`
-    navigate("home")
+    // await whoAmI()
+    navigate("/home")
   }
 
   return (

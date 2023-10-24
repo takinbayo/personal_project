@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { userContext } from "../App";
 import { useNavigate } from "react-router-dom";
+import { api } from "../api/authApi";
 
 const LoginPage = () => {
   const [userName, setUserName] = useState("");
@@ -23,7 +24,7 @@ const LoginPage = () => {
     setUser(user)
     localStorage.setItem("token", token)
     api.defaults.headers.common["Authorization"] = `Token ${token}`
-    navigate("home")
+    navigate("/home")
   }
 
   return (
@@ -63,7 +64,7 @@ const LoginPage = () => {
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
-            Sign Up
+            Log In
           </button>
         </div>
       </form>
