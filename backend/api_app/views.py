@@ -5,6 +5,7 @@ import requests
 import pprint
 from dotenv import load_dotenv
 import os
+import random
 # Create your views here.
 
 load_dotenv()
@@ -13,7 +14,7 @@ pp = pprint.PrettyPrinter(indent=2, depth=2)
 class Event_Image(APIView):
     
     def get(self, request):
-      movie_id = 2
+      movie_id = random.randint(1, 5)
       url = f"https://api.themoviedb.org/3/movie/{movie_id}/images"
       access_token = os.getenv('API_KEY')
 
