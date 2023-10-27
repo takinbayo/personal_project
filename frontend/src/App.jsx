@@ -58,7 +58,7 @@ function App() {
             <Link to ="/home" className="mr-4">Home</Link>
             <button onClick={logOut}>Log Out</button>
             <Link to ="/about"className="mx-4">About</Link>
-            <Link to ="/event/2023-12-18"className="ml-4">Events</Link>
+            <Link to ="/event/"className="ml-4">Events</Link>
             </>
             :
             <>

@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         element: <Home /> 
       },
       {
-        path: "event/:date",
+        path: "event/",
         element: <EventPage />,
       },
       {

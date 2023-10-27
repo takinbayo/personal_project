@@ -2,9 +2,12 @@ asgiref==3.7.2
 certifi==2023.7.22
 charset-normalizer==3.3.0
 Django==4.2.6
+django-cors-headers==4.3.0
 djangorestframework==3.14.0
+gunicorn==21.2.0
 idna==3.4
 oauthlib==3.2.2
+packaging==23.2
 psycopg==3.1.12
 psycopg-binary==3.1.12
 psycopg2==2.9.9

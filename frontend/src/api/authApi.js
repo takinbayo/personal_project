@@ -1,12 +1,18 @@
 import axios from 'axios'
 
+// "http://127.0.0.1:8000/detty/users/"
+const base_url = import.meta.env.VITE_BASE_URL
 
 export const api = axios.create({
-  baseURL: "http://127.0.0.1:8000/detty/users/"
+  baseURL: `http://${base_url}/detty/users/`
 })
 
 export const event = axios.create({
-  baseURL: "http://127.0.0.1:8000/detty/"
+  baseURL: `http://${base_url}/detty/`
+})
+
+export const image = axios.create({
+  baseURL: `http://${base_url}/detty/images`
 })
 
 

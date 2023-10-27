@@ -5,7 +5,7 @@ import cn from '../util/cn';
 import dayjs from 'dayjs'
 import {useState, useEffect} from 'react'
 import {GrFormNext, GrFormPrevious} from "react-icons/gr";
-import { event } from "../api/authApi";
+import { event, image } from "../api/authApi";
 // import { userContext } from '../App';
 
 export default function Home() {
@@ -15,6 +15,7 @@ export default function Home() {
   const [today, setToday] = useState(currentDate);
   const [selectDate, setSelectDate] = useState(currentDate)
   const [eventDate, setEventDate] = useState(null)
+  const [poster, setPoster] = useState(null)
 
   const screenData = async(selectDate) => {
     // e.preventDefault();
@@ -29,9 +30,24 @@ export default function Home() {
     }
   };
 
+  const photos = async() => {
+    // e.preventDefault()
+    const response = await image.get("")
+    console.log(response.data.image_url)
+    if (response.status === 200) {
+      const data = await response.data;
+      setPoster(data)
+    } else {
+      setPoster(null)
+    }
+  }
+
   useEffect(() => {
     screenData(selectDate)
+    photos()
   }, [selectDate])
+
+  // console.log(poster)
     
     
   
@@ -76,6 +92,7 @@ export default function Home() {
                 onClick={() => {
                   setSelectDate(date);
                   screenData(date)
+                  photos()
                 }}
                 
                 >{date.date()}</h1>
@@ -87,9 +104,23 @@ export default function Home() {
       </div>
       <div className='h-96 w-96 px-5'>
         <h1 className='font-semibold'>Schedule for {selectDate.toDate().toDateString()}</h1>
+         
+        {poster ? (
+          // let pic = poster.data.image_url
+          // console.log(poster.data.image_url)
+          <div>
+            <img src={poster.image_url} alt="Event Poster" />
+          </div>
+          
+        ) : (
+          <p>Image not Available.</p>
+          // <img src={poster.data.image_url} alt="Event Poster" />
+        )}
+
         {eventDate ? (
           // console.log(eventDate.fields.event_name)
           <div>
+
             <p>Event Name: {eventDate.fields.event_name}</p>
             <p>Event Description: {eventDate.fields.event_des}</p>
             <p>Location: {eventDate.fields.location}</p>
