@@ -11,7 +11,7 @@ export DEBUG=$3
 export POSTGRES_DB=$4
 export POSTGRES_USER=$5
 export POSTGRES_PASSWORD=$6
-export NEW_VERSION=$7
+export NEW_VERSION=$7cl
 
 # docker-compose -f docker-compose.prod.yml build --no-cache
 # docker-compose -f docker-compose.prod.yml up -d
