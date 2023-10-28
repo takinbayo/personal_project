@@ -44,33 +44,37 @@ function App() {
       navigate("/login")
     }
   }
-
+  // text-center min-h-screen flex flex-col
 
   return (
-    <div className="text-center min-h-screen flex flex-col">
-      <header>
-        <h1 className="text-4xl font-bold font-serif">Detty December</h1>
-        <nav>
-          {
-            user 
-            ?
-            <>
-            <Link to ="/home" className="mr-4">Home</Link>
-            <button onClick={logOut}>Log Out</button>
-            <Link to ="/about"className="mx-4">About</Link>
-            <Link to ="/event/"className="ml-4">Events</Link>
-            </>
-            :
-            <>
-            <Link to ="/login" className="mr-4">Log In</Link>
-            <Link to ="/" className="mx-4">Sign Up</Link>
-            </>
-          }   
-        </nav>
+    <div>
+      <div className=" background-container">
+        <header>
+          <h1 className="text-4xl text-center text-white font-bold font-serif">Detty December</h1>
         </header>
-        <userContext.Provider value={{user, setUser}}>
-          <Outlet />
-        </userContext.Provider>
+        <div className="text-center mt-4">
+          <nav>
+            {
+              user 
+              ?
+              <>
+              <Link to ="/home" className="mr-4">Home</Link>
+              <button onClick={logOut}>Log Out</button>
+              <Link to ="/about"className="mx-4">About</Link>
+              <Link to ="/event/"className="ml-4">Events</Link>
+              </>
+              :
+              <>
+              <Link to ="/login" className="mr-4">Log In</Link>
+              <Link to ="/" className="mx-4">Sign Up</Link>
+              </>
+            }   
+          </nav>
+        </div>
+          <userContext.Provider value={{user, setUser}}>
+            <Outlet />
+          </userContext.Provider>
+      </div>
     </div>
   );
 

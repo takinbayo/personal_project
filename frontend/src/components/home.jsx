@@ -24,6 +24,7 @@ export default function Home() {
     // console.log(response.data)
     if (response.status === 200) {
       const data = await response.data;
+      console.log(eventDate)
       setEventDate(data)
     } else{
       setEventDate(null)
@@ -103,7 +104,7 @@ export default function Home() {
         </div>
       </div>
       <div className='h-96 w-96 px-5'>
-        <h1 className='font-semibold'>Schedule for {selectDate.toDate().toDateString()}</h1>
+        <h1 className='font-semibold'>Events On {selectDate.toDate().toDateString()}</h1>
          
         {poster ? (
           // let pic = poster.data.image_url
@@ -119,17 +120,17 @@ export default function Home() {
 
         {eventDate ? (
           // console.log(eventDate.fields.event_name)
-          <div>
-
-            <p>Event Name: {eventDate.fields.event_name}</p>
-            <p>Event Description: {eventDate.fields.event_des}</p>
-            <p>Location: {eventDate.fields.location}</p>
+          <div className='bg-white p-4 rounded-lg shadow w-96'>
+            <h4 className="text-2xl font-semibold mb-2">Event Details</h4>
+            <p className='text-md'>Event Name: {eventDate.fields.event_name}</p>
+            <p className='text-md'>Event Description: {eventDate.fields.event_des}</p>
+            <p className='text-md'>Location: {eventDate.fields.location}</p>
             {/* <p>Date: {eventDate.flields.date}</p> */}
-            <p>Owner: {eventDate.fields.owner}</p>
-            <p>Time: {eventDate.fields.time}</p>
+            <p className='text-md'>Owner: {eventDate.fields.owner}</p>
+            <p className='text-md'>Time: {eventDate.fields.time}</p>
           </div>
         ) : (
-          <p>No meetings for today.</p>
+          <p>No scheduled events today.</p>
         )}
        
       </div>

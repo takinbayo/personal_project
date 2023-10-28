@@ -31,6 +31,10 @@ const LoginPage = () => {
     <div className="h-screen flex items-center justify-center">
       <form onSubmit={(e) => logIn(e)}
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        style={{
+          position: 'absolute',
+          bottom: '0',
+        }}
       >
         <h5 className="text-2xl text-center mb-4">Log In</h5>
         <div className="mb-4">

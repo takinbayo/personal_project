@@ -1,45 +1,5 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.background-container {
+  background-image: url('https://images.pexels.com/photos/4449616/pexels-photo-4449616.jpeg?auto=compress&cs=tinysrgb&w=400://images.pexels.com/photos/15667214/pexels-photo-15667214/free-photo-of-a-man-with-a-backpack-in-a-forest.jpeg?auto=compress&cs=tinysrgb&w=400');
+  background-size: cover; /* Adjust as needed */
+  background-position: center; /* Adjust as needed */
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
-
-
-

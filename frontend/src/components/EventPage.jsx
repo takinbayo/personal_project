@@ -26,13 +26,13 @@ export default function all_Events() {
 
 
   return (
-    <div>
-      <h2>Events</h2>
+    <div className="p-8">
+      <h2 className="text-2x1 font-semibold mb-4">Events</h2>
       {info && info.length > 0 ? (
-        <ul>
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {info.map((eventItem) => (
-            <li key={eventItem.pk}>
-              <h3>{eventItem.fields.event_name}</h3>
+            <li key={eventItem.pk} className="bg-white p-4 rounded-lg shadow">
+              <h3 className="text-x1 font-semibold">{eventItem.fields.event_name}</h3>
               <p>Date: {eventItem.fields.date}</p>
               <p>Location: {eventItem.fields.location}</p>
               <p>Time: {eventItem.fields.time}</p>
