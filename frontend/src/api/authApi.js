@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+// 54.196.198.220
 // "http://127.0.0.1:8000/detty/users/"
 const base_url = import.meta.env.VITE_BASE_URL
 
